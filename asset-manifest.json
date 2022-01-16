@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/reddit-saved-shuffler/static/css/main.ded779d2.css",
-    "main.js": "/reddit-saved-shuffler/static/js/main.b40738b2.js",
+    "main.js": "/reddit-saved-shuffler/static/js/main.b9a8242a.js",
     "static/js/787.9ca41145.chunk.js": "/reddit-saved-shuffler/static/js/787.9ca41145.chunk.js",
     "index.html": "/reddit-saved-shuffler/index.html",
     "main.ded779d2.css.map": "/reddit-saved-shuffler/static/css/main.ded779d2.css.map",
-    "main.b40738b2.js.map": "/reddit-saved-shuffler/static/js/main.b40738b2.js.map",
+    "main.b9a8242a.js.map": "/reddit-saved-shuffler/static/js/main.b9a8242a.js.map",
     "787.9ca41145.chunk.js.map": "/reddit-saved-shuffler/static/js/787.9ca41145.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ded779d2.css",
-    "static/js/main.b40738b2.js"
+    "static/js/main.b9a8242a.js"
   ]
 }
