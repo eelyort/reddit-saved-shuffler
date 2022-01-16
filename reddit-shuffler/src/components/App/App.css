@@ -11,6 +11,9 @@ html, body, #root {
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
+.flex-grow {
+  flex-grow: 1;
+}
 
 .app {
   margin: 0;
@@ -41,4 +44,18 @@ html, body, #root {
 }
 .loggedin-wrapper .absolute-centering .MuiButton-root {
   margin: 15px;
+}
+.loggedin-wrapper .loggedin-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.loggedin-wrapper .loggedin-inner-wrapper .loggedin-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 8px 0;
+}
+.loggedin-wrapper .loggedin-inner-wrapper .loggedin-container h1,
+.loggedin-wrapper .loggedin-inner-wrapper .loggedin-container h3 {
+  margin: 0;
 }

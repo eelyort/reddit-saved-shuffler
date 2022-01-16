@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { CircularProgress } from '@mui/material';
-const { qs } = require('url-parse')
+import { qs } from 'url-parse';
 
 const AuthCallback = (props) => {
     const {
@@ -71,7 +71,7 @@ const AuthCallback = (props) => {
 
     return (
         <div className='absolute-centering'>
-            <CircularProgress />
+            <CircularProgress color={'primary'} />
         </div>
     );
 };
