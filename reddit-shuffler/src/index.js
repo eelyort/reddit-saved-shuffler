@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 ReactDOM.render(
   <React.StrictMode>
     <CookiesProvider>
-      <BrowserRouter>
+      <BrowserRouter basename='/reddit-saved-shuffler'>
         <App />
       </BrowserRouter>
     </CookiesProvider>
