@@ -22,8 +22,8 @@ function App() {
       }
     }
     else {
-      if (location.pathname !== '/' && location.pathname !== '/authorize_callback') {
-        navigate('/');
+      if (location.pathname !== '/' && location.pathname !== '/homepage') {
+        navigate('/homepage');
       }
     }
   });
@@ -37,14 +37,15 @@ function App() {
         <Header />
         <div className='app-main-wrapper'>
           <Routes>
+            {/* Due to the way the callback works, authorize callback needs to be the root directory (github pages will give 404 otherwise) */}
             <Route path="/" element={
               <>
-                <HomePage cookies={cookies} setCookie={setCookie} removeCookie={removeCookie} />
+                <AuthCallback cookies={cookies} setCookie={setCookie} removeCookie={removeCookie} />
               </>
             }/>
-            <Route path="/authorize_callback" element={
+            <Route path="/homepage" element={
               <>
-                <AuthCallback cookies={cookies} setCookie={setCookie} removeCookie={removeCookie} />
+                <HomePage cookies={cookies} setCookie={setCookie} removeCookie={removeCookie} />
               </>
             }/>
             <Route path="/logged_in" element={

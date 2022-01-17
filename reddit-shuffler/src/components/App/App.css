@@ -59,3 +59,6 @@ html, body, #root {
 .loggedin-wrapper .loggedin-inner-wrapper .loggedin-container h3 {
   margin: 0;
 }
+.loggedin-wrapper .loggedin-inner-wrapper .loggedin-container .linear-progress {
+  width: 80%;
+}

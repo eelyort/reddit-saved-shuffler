@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, LinearProgress } from '@mui/material';
 import { qs } from 'url-parse';
 
 // ratelimit: 60/min
@@ -154,6 +154,7 @@ const LoggedIn = (props) => {
                     <div className='loggedin-container'>
                         <div className='flex-grow' />
                         <Button disabled={isBusy} variant='contained' color='primary' onClick={() => {
+                            setShuffleConfirmation(false);
                             setIsFetching(true);
                             setFetchAfter('');
                             setFetchesPending(-1);
@@ -162,6 +163,7 @@ const LoggedIn = (props) => {
                             Get Saved
                         </Button>
                         <Button variant='contained' color='secondary' onClick={() => {
+                            setShuffleConfirmation(false);
                             removeCookie('userToken');
                         }}>
                             Log Out
@@ -171,22 +173,23 @@ const LoggedIn = (props) => {
                     {(isBusy) ? (
                         <div className='loggedin-container'>
                             <div className='flex-grow' />
-                            <CircularProgress color='primary' />
+                            {isFetching ? (
+                                <CircularProgress color='primary' />
+                            ) : (
+                                <div className='linear-progress'>
+                                    <LinearProgress color='primary' variant="determinate" value={(shuffledIndex/shuffledList.length)*100} />
+                                </div>
+                            )}
                             <div className='flex-grow' />
                         </div>
                     ) : null}
-                    <div className='loggedin-container'>
-                        <div className='flex-grow' />
-                        <h3>Found {saved.length} saved posts.</h3>
-                        <div className='flex-grow' />
-                    </div>
                     <div className='loggedin-container'>
                         <div className='flex-grow' />
                         <Button disabled={isBusy || saved.length === 0} variant='contained' color='primary' onClick={() => {
                             setShuffleConfirmation(false);
                             setShuffledIndex(0);
                         }}>
-                            Shuffle Saved
+                            Shuffle {saved.length} Saved Posts
                         </Button>
                         <div className='flex-grow' />
                     </div>

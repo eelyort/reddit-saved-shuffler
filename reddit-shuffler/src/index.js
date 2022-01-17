@@ -5,10 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import { CookiesProvider } from 'react-cookie';
 import { BrowserRouter } from "react-router-dom";
 
+const localhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
 ReactDOM.render(
   <React.StrictMode>
     <CookiesProvider>
-      <BrowserRouter basename='/reddit-saved-shuffler'>
+      <BrowserRouter basename={localhost ? '' : '/reddit-saved-shuffler'}>
         <App />
       </BrowserRouter>
     </CookiesProvider>

@@ -27,7 +27,7 @@ const HomePage = (props) => {
                     const clientId = localhost ? 'w2DPtepnkdDDkRNhsmBWGw' : 'qxf3f2sg0iK1roU66vt5zw';
                     const responseType = 'code';
                     const state = genRandomString(stateLength);
-                    const redirectUri = localhost ? 'http://localhost:3000/authorize_callback' : 'https://eelyort.github.io/reddit-saved-shuffler/authorize_callback';
+                    const redirectUri = localhost ? 'http://localhost:3000' : 'https://eelyort.github.io/reddit-saved-shuffler';
                     const duration = 'temporary';
                     const scope = 'history identity modposts save account'
 
@@ -36,6 +36,8 @@ const HomePage = (props) => {
                         + `&redirect_uri=${redirectUri}&duration=${duration}`
                         + `&scope=${scope}`;
                     console.log(`state: ${state}`);
+
+                    console.log(`localhost: '${window.location.hostname}':${localhost}, authUrl: ${authUrl}`);
 
                     setCookie('loginState', state, { maxAge: 600 });
                     window.location.href = authUrl;

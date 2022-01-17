@@ -16,10 +16,16 @@ const AuthCallback = (props) => {
         const state = searchParams.get('state');
         const code = searchParams.get('code');
         console.log(`state: ${state}, code: ${code}`);
+
+        // Due to the way the callback works, authorize callback needs to be the root directory (github pages will give 404 otherwise)
+        if (!state || !code) {
+            navigate('/homepage');
+        }
+
         const localhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
         const clientId = localhost ? 'w2DPtepnkdDDkRNhsmBWGw' : 'qxf3f2sg0iK1roU66vt5zw';
         const clientSecret = localhost ? 'ZmiZJP7WyOurnLRMA64Px67uS8OteQ' : 'bM1V0c-X63jfhxoVl9ttRsi7r-Vj4Q';
-        const redirectUri = localhost ? 'http://localhost:3000/authorize_callback' : 'https://eelyort.github.io/reddit-saved-shuffler/authorize_callback';
+        const redirectUri = localhost ? 'http://localhost:3000' : 'https://eelyort.github.io/reddit-saved-shuffler';
 
         if (state === cookies.loginState) {
             // we now need to turn the one-time-use code into an auth token
